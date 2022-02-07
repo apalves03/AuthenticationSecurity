@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Authentication Security</string>
+    <string name="autentication_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="autentication_notification_channel_name" translatable="true">Autentication</string>
+    <string name="autentication_notification_channel_description">Autentication Code</string>
+    <string name="app_notification_channel_id" translatable="false">app_channel</string>
+    <string name="egg_notification_channel_name" translatable="true">App</string>
+    <string name="registration_authentication_security">Register to Authentication Security!</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_enter_code">Enter the access code</string>
+    <string name="hint_hello_world">Hello World!</string>
+    <string name="password_error">Incorrect password. Try again</string>
+    <string name="validation_error">Error during validation. Check or resend the code.</string>
+    <string name="registration_username_error">Username has to be longer than 4 characters</string>
+    <string name="registration_password_error">Password has to be longer than 4 characters</string>
+    <string name="button_next">Next</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="tcs_text">Congratulations, you have registered a user in the Authentication Security app."\n\n"This app is a two-step authentication model."\n\n"You have completed the first step."\n\n"For the second step, you will receive a notification on your device via Firebase Cloud Messaging."\n\n"This notification has an access code to be informed in the app.</string>
+    <string name="identity_validation_information">You have now received a notification on your device with an access code!</string>
+    <string name="welcome_authentication_security">Welcome to Authentication Security!</string>
+    <string name="login">Login</string>
+    <string name="unregister">Unregister</string>
+    <string name="validate">Validate</string>
+    <string name="logout">Logout</string>
+    <string name="register">Register</string>
+    <string name="notification_title">Validate your identity</string>
+    <string name="enter_code_body_notification">Enter code %s</string>
+    <string name="resend_code"><u>Resend code</u></string>
+</resources>
