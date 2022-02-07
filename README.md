@@ -16,6 +16,15 @@ Afterwards, the defined authentication process starts in the following order:
 
 The architecture is MVVM, with dependence injection Dagger and several Android Jetpack libraries.
 
+Screenshots
+-----------
+
+![User Registration](screenshots/user_registration.png "User registration")
+![Term and Conditions Registration](screenshots/term_conditions_registration.png "Term and conditions registration")
+![Validate your Identity](screenshots/validate_identity.png "Validate your identity")
+![Welcome User](screenshots/welcome_user.png "Welcome user")
+![User_Auth](screenshots/user_auth.png "User auth")
+
 Libraries Used
 --------------
 * Architecture - MVVM
@@ -51,12 +60,3 @@ Upcoming features
 * Instrumentation Tests
 * espresso
 * junit
-
-Screenshots
------------
-
-![User Registration](screenshots/user_registration.png "User registration")
-![Term and Conditions Registration](screenshots/term_conditions_registration.png "Term and conditions registration")
-![Validate your Identity](screenshots/validate_identity.png "Validate your identity")
-![Welcome User](screenshots/welcome_user.png "Welcome user")
-![User_Auth](screenshots/user_auth.png "User auth")
