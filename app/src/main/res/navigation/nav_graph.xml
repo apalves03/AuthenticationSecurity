@@ -49,18 +49,18 @@
         android:label="LoginKeyFragment"
         tools:layout="@layout/fragment_login_key">
         <action
-            android:id="@+id/action_loginKeyFragment_to_welcomeFragment"
-            app:destination="@id/welcomeFragment"
-            app:popUpTo="@id/welcomeFragment"
+            android:id="@+id/action_loginKeyFragment_to_userFragment"
+            app:destination="@id/userFragment"
+            app:popUpTo="@id/userFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/welcomeFragment"
-        android:name="com.apalves03.authenticationsecurity.welcome.WelcomeFragment"
-        android:label="WelcomeFragment"
-        tools:layout="@layout/fragment_welcome">
+        android:id="@+id/userFragment"
+        android:name="com.apalves03.authenticationsecurity.user.UserFragment"
+        android:label="UserFragment"
+        tools:layout="@layout/fragment_user">
         <action
-            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            android:id="@+id/action_userFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />

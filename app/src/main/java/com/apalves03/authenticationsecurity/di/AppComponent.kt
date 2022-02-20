@@ -1,13 +1,13 @@
 package com.apalves03.authenticationsecurity.di
 
 import android.content.Context
-import com.apalves03.authenticationsecurity.data.source.UserManager
-import com.apalves03.authenticationsecurity.data.source.remote.di.NetworkModule
+import com.apalves03.authenticationsecurity.data.source.DefaultAuthenticationSecurityRepository
+import com.apalves03.authenticationsecurity.data.source.remote.di.RemoteModule
 import com.apalves03.authenticationsecurity.login.di.LoginComponent
 import com.apalves03.authenticationsecurity.loginkey.di.LoginKeyComponent
 import com.apalves03.authenticationsecurity.registration.di.RegistrationComponent
-import com.apalves03.authenticationsecurity.data.source.local.di.StorageModule
-import com.apalves03.authenticationsecurity.welcome.di.UserComponent
+import com.apalves03.authenticationsecurity.data.source.local.di.LocalModule
+import com.apalves03.authenticationsecurity.user.di.UserComponent
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -17,8 +17,8 @@ import javax.inject.Singleton
 @Singleton
 // Definition of a Dagger component that adds info from the different modules to the graph
 @Component(modules = [
-    StorageModule::class,
-    NetworkModule::class,
+    LocalModule::class,
+    RemoteModule::class,
     ViewModelBuilderModule::class,
     AppSubcomponents::class])
 interface AppComponent {
@@ -35,5 +35,5 @@ interface AppComponent {
     fun loginComponent(): LoginComponent.Factory
     fun loginKeyComponent(): LoginKeyComponent.Factory
     fun userComponent(): UserComponent.Factory
-    fun userManager(): UserManager
+    fun userManager(): DefaultAuthenticationSecurityRepository
 }

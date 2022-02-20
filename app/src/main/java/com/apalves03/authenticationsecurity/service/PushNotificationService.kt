@@ -1,14 +1,14 @@
-package com.apalves03.authenticationsecurity.data.source.remote
+package com.apalves03.authenticationsecurity.service
 
 import android.app.NotificationManager
 import android.util.Log
 import androidx.core.content.ContextCompat
-import com.apalves03.authenticationsecurity.MyApplication
+import com.apalves03.authenticationsecurity.AuthenticationSecurityApplication
 import com.apalves03.authenticationsecurity.util.sendNotification
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
-class MyFirebaseMessagingService : FirebaseMessagingService() {
+class PushNotificationService : FirebaseMessagingService() {
 
     /**
      * Called when message is received.
@@ -70,12 +70,12 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     fun registerDeviceTokenFcm(deviceTokenFcm: String) {
         assert(deviceTokenFcm != null)
 
-        val userManager = (application as MyApplication).appComponent.userManager()
+        val userManager = (application as AuthenticationSecurityApplication).appComponent.userManager()
 
         userManager.registerDeviceTokenFcm(deviceTokenFcm)
     }
 
     companion object {
-        private const val TAG = "MyFirebaseMsgService"
+        private const val TAG = "PushNotificationService"
     }
 }

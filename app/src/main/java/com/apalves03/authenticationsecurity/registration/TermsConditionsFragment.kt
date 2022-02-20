@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.apalves03.authenticationsecurity.MyApplication
+import com.apalves03.authenticationsecurity.AuthenticationSecurityApplication
 import com.apalves03.authenticationsecurity.R
 import com.apalves03.authenticationsecurity.databinding.FragmentTermsConditionsBinding
 import javax.inject.Inject
@@ -28,7 +28,7 @@ class TermsConditionsFragment : Fragment() {
         super.onAttach(context)
 
         // Grabs the registrationComponent from the Activity and injects this Fragment
-        (activity?.application as MyApplication).appComponent
+        (activity?.application as AuthenticationSecurityApplication).appComponent
             .registrationComponent()
             .create()
             .inject(this)

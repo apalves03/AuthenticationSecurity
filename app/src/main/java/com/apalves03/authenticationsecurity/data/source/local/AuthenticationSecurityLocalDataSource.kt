@@ -1,10 +1,13 @@
 package com.apalves03.authenticationsecurity.data.source.local
 
 import android.content.Context
+import com.apalves03.authenticationsecurity.data.source.AuthenticationSecurityDataSource
 import javax.inject.Inject
 
 // @Inject tells Dagger how to provide instances of this type
-class SharedPreferencesStorage @Inject constructor(context: Context) : Storage {
+class AuthenticationSecurityLocalDataSource @Inject constructor(
+    context: Context
+) : AuthenticationSecurityDataSource {
 
     private val sharedPreferences = context.getSharedPreferences("AuthenticationSecurity", Context.MODE_PRIVATE)
 

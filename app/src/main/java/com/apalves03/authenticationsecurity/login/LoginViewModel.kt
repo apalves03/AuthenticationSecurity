@@ -3,20 +3,20 @@ package com.apalves03.authenticationsecurity.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.apalves03.authenticationsecurity.data.source.UserManager
+import com.apalves03.authenticationsecurity.data.source.DefaultAuthenticationSecurityRepository
 import javax.inject.Inject
 
 /**
  * Obtain information of what to show on the screen and handle complex logic.
  */
-class LoginViewModel @Inject constructor(private val userManager: UserManager) : ViewModel() {
+class LoginViewModel @Inject constructor(private val defaultAuthenticationSecurityRepository: DefaultAuthenticationSecurityRepository) : ViewModel() {
 
     private val _loginState = MutableLiveData<LoginViewState>()
     val loginState: LiveData<LoginViewState>
         get() = _loginState
 
     fun login(username: String, password: String) {
-        if (userManager.loginUser(username, password)) {
+        if (defaultAuthenticationSecurityRepository.loginUser(username, password)) {
             _loginState.value = LoginSuccess
         } else {
             _loginState.value = LoginError
@@ -24,8 +24,8 @@ class LoginViewModel @Inject constructor(private val userManager: UserManager) :
     }
 
     fun unregister() {
-        userManager.unregister()
+        defaultAuthenticationSecurityRepository.unregister()
     }
 
-    fun getUsername(): String = userManager.username
+    fun getUsername(): String = defaultAuthenticationSecurityRepository.username
 }

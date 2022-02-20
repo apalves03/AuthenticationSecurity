@@ -1,7 +1,7 @@
 package com.apalves03.authenticationsecurity.registration
 
 import androidx.lifecycle.ViewModel
-import com.apalves03.authenticationsecurity.data.source.UserManager
+import com.apalves03.authenticationsecurity.data.source.DefaultAuthenticationSecurityRepository
 import com.apalves03.authenticationsecurity.di.ActivityScope
 import javax.inject.Inject
 
@@ -12,7 +12,7 @@ import javax.inject.Inject
  * that UserManager is a dependency.
  */
 @ActivityScope
-class RegistrationViewModel @Inject constructor(val userManager: UserManager) : ViewModel() {
+class RegistrationViewModel @Inject constructor(val defaultAuthenticationSecurityRepository: DefaultAuthenticationSecurityRepository) : ViewModel() {
 
     private var username: String? = null
     private var password: String? = null
@@ -32,7 +32,7 @@ class RegistrationViewModel @Inject constructor(val userManager: UserManager) : 
         assert(password != null)
         assert(acceptedTCs == true)
 
-        userManager.registerUser(username!!, password!!)
+        defaultAuthenticationSecurityRepository.registerUser(username!!, password!!)
     }
 
 }

@@ -1,4 +1,4 @@
-package com.apalves03.authenticationsecurity.welcome.di
+package com.apalves03.authenticationsecurity.user.di
 
 import javax.inject.Scope
 

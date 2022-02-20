@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.apalves03.authenticationsecurity.MyApplication
+import com.apalves03.authenticationsecurity.AuthenticationSecurityApplication
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -30,7 +30,7 @@ class LoginFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        (activity?.application as MyApplication).appComponent
+        (activity?.application as AuthenticationSecurityApplication).appComponent
             .loginComponent()
             .create()
             .inject(this)
@@ -50,7 +50,7 @@ class LoginFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val userManager = (activity?.application as MyApplication).appComponent.userManager()
+        val userManager = (activity?.application as AuthenticationSecurityApplication).appComponent.userManager()
         if (!userManager.isUserLoggedIn() && !userManager.isUserRegistered()) {
             findNavController()
                 .navigate(R.id.action_loginFragment_to_registrationFragment)

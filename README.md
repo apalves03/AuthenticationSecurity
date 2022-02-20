@@ -16,14 +16,30 @@ Afterwards, the defined authentication process starts in the following order:
 
 The architecture is MVVM, with dependence injection Dagger and several Android Jetpack libraries.
 
-Screenshots
+
+Architecture
+-----------
+![Architecture](screenshots/architecture.png "Architecture")
+
+Screenshots (not dark)
 -----------
 
-![User Registration](screenshots/user_registration.png "User registration")
-![Term and Conditions Registration](screenshots/term_conditions_registration.png "Term and conditions registration")
-![Validate your Identity](screenshots/validate_identity.png "Validate your identity")
-![Welcome User](screenshots/welcome_user.png "Welcome user")
-![User_Auth](screenshots/user_auth.png "User auth")
+![User Registration](screenshots/not_dark_user_registration.png "User registration")
+![Term and Conditions Registration](screenshots/not_dark_term_conditions_registration.png "Term and conditions registration")
+![Validate your Identity](screenshots/not_dark_validate_identity.png "Validate your identity")
+![Welcome User](screenshots/not_dark_welcome_user.png "Welcome user")
+![User_Auth](screenshots/not_dark_user_auth.png "User auth")
+
+
+Screenshots (dark)
+-----------
+
+![User Registration](screenshots/dark_user_registration.png "User registration")
+![Term and Conditions Registration](screenshots/dark_term_conditions_registration.png "Term and conditions registration")
+![Validate your Identity](screenshots/dark_validate_identity.png "Validate your identity")
+![Welcome User](screenshots/dark_welcome_user.png "Welcome user")
+![User_Auth](screenshots/dark_user_auth.png "User auth")
+
 
 Libraries Used
 --------------
@@ -51,6 +67,7 @@ Libraries Used
   * Dagger
   * Kotlin Coroutines
   
+
 Upcoming features
 -----------------
 * Data Binding
@@ -58,5 +75,6 @@ Upcoming features
 * Binding Adapters
 * Unit Tests
 * Instrumentation Tests
+* Preferences DataStore
 * espresso
 * junit

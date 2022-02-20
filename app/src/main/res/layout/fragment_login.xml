@@ -64,7 +64,8 @@
                 android:gravity="center"
                 android:text="@string/password_error"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textColor="@color/red"
                 android:visibility="invisible" />
 
             <RelativeLayout

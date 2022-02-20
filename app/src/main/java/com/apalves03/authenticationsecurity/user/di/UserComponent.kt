@@ -1,6 +1,6 @@
-package com.apalves03.authenticationsecurity.welcome.di
+package com.apalves03.authenticationsecurity.user.di
 
-import com.apalves03.authenticationsecurity.welcome.WelcomeFragment
+import com.apalves03.authenticationsecurity.user.UserFragment
 import dagger.Subcomponent
 
 // Scope annotation that the UserComponent uses
@@ -17,6 +17,6 @@ interface UserComponent {
     }
 
     // Classes that can be injected by this Component
-    fun inject(fragment: WelcomeFragment)
+    fun inject(fragment: UserFragment)
 
 }

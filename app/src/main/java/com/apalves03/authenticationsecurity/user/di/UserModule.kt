@@ -1,8 +1,8 @@
-package com.apalves03.authenticationsecurity.welcome.di
+package com.apalves03.authenticationsecurity.user.di
 
 import androidx.lifecycle.ViewModel
 import com.apalves03.authenticationsecurity.di.ViewModelKey
-import com.apalves03.authenticationsecurity.welcome.WelcomeViewModel
+import com.apalves03.authenticationsecurity.user.UserViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -13,7 +13,7 @@ abstract class UserModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(WelcomeViewModel::class)
-    abstract fun bindViewModel(viewmodel: WelcomeViewModel): ViewModel
+    @ViewModelKey(UserViewModel::class)
+    abstract fun bindViewModel(viewmodel: UserViewModel): ViewModel
 
 }

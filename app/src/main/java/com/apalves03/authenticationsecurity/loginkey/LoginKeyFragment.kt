@@ -13,12 +13,10 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import com.apalves03.authenticationsecurity.MyApplication
+import com.apalves03.authenticationsecurity.AuthenticationSecurityApplication
 import com.apalves03.authenticationsecurity.R
 import com.apalves03.authenticationsecurity.databinding.FragmentLoginKeyBinding
 import com.apalves03.authenticationsecurity.util.CODE_EXTRA
-import kotlinx.coroutines.launch
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -39,7 +37,7 @@ class LoginKeyFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        (activity?.application as MyApplication).appComponent
+        (activity?.application as AuthenticationSecurityApplication).appComponent
             .loginKeyComponent()
             .create()
             .inject(this)
@@ -60,11 +58,11 @@ class LoginKeyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        loginKeyViewModel.loginKeyState.observe(viewLifecycleOwner, Observer<LoginKeyViewState> { state ->
+        loginKeyViewModel.loginKeyViewState.observe(viewLifecycleOwner, Observer<LoginKeyViewState> { state ->
             when (state) {
                 is LoginKeySuccess -> {
                     findNavController()
-                        .navigate(R.id.action_loginKeyFragment_to_welcomeFragment)
+                        .navigate(R.id.action_loginKeyFragment_to_userFragment)
                 }
                 is LoginKeyError -> binding.error.visibility = View.VISIBLE
             }
@@ -100,7 +98,7 @@ class LoginKeyFragment : Fragment() {
         binding.code.doOnTextChanged { _, _, _, _ -> binding.error.visibility = View.INVISIBLE }
 
         binding.validate.setOnClickListener {
-            loginKeyViewModel.loginKey(binding.code.text.toString(), (activity?.application as MyApplication))
+            loginKeyViewModel.loginKey(binding.code.text.toString(), (activity?.application as AuthenticationSecurityApplication))
         }
 
         binding.resendCode.setOnClickListener {
@@ -135,7 +133,7 @@ class LoginKeyFragment : Fragment() {
             return
         }
 
-        loginKeyViewModel.sendNotification((activity?.application as MyApplication).applicationContext)
+        loginKeyViewModel.sendNotification((activity?.application as AuthenticationSecurityApplication).applicationContext)
     }
 
     private fun createChannel(channelId: String, channelName: String) {
@@ -157,7 +155,7 @@ class LoginKeyFragment : Fragment() {
             notificationChannel.enableVibration(true)
             notificationChannel.description = getString(R.string.autentication_notification_channel_description)
 
-            val notificationManager = (activity?.application as MyApplication).getSystemService(
+            val notificationManager = (activity?.application as AuthenticationSecurityApplication).getSystemService(
                 NotificationManager::class.java
             )
             notificationManager.createNotificationChannel(notificationChannel)

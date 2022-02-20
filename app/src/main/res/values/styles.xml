@@ -9,9 +9,10 @@
 
     <style name="Widget.AuthenticationSecurity.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextAppearance">@style/TextAppearance.AuthenticationSecurity.TextInputLayout.HintText</item>
-        <item name="hintTextColor">@color/textColorPrimary</item>
+        <item name="hintTextColor">?android:attr/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:paddingBottom">8dp</item>
-        <item name="boxStrokeColor">@color/textInputOutlineColor</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
     </style>
 
     <style name="TextAppearance.AuthenticationSecurity.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
